@@ -1,0 +1,291 @@
+/* Layout Core Variables */
+:root {
+    --sidebar-bg: #0d0d5c;
+    --card-bg-light: #cceeff;
+    --camera-bg: #06064d;
+    --sim-bg: #d9d9d9;
+    --accent-blue: #5bc0f8;
+    --status-green: #00c853;
+}
+
+.nicegui-content {
+    padding: 0 !important;
+}
+
+/* Grid Layout Container */
+
+.dashboard-grid {
+    display: grid !important;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    gap: 15px;
+    height: calc(100vh - 40px); 
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+/* Ensure the columns themselves act as flex containers for the cards */
+.col-left, .col-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 15px;
+}
+
+/* Sidebar Customization */
+.custom-sidebar {
+    background-color: var(--sidebar-bg) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0; 
+}
+
+.nav-btn .q-icon {
+    color: #ffffff;
+}
+
+.nav-btn {
+    color: rgb(255, 255, 255);
+    font-size: 2.8rem; 
+    margin-bottom: 1.5rem; 
+    width: 90px;
+    height: 90px;
+    border-radius: 15px; 
+}
+
+/* Left Column Flexbox (Telemetry & Camera) */
+.col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-perf {
+    background-color: var(--card-bg-light) !important;
+    flex: 1; /* Takes up 1 part of the vertical space */
+    border-radius: 12px;
+}
+
+.card-camera {
+    background-color: var(--camera-bg) !important;
+    flex: 1.2; /* Takes up slightly more vertical space */
+    border-radius: 12px;
+}
+
+/* Right Column Flexbox (Stage & Simulation) */
+.col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-status {
+    background-color: white !important;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.card-stage {
+    background-color: white !important;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 0.2;
+}
+
+.card-sim {
+    background-color: var(--sim-bg) !important;
+    flex: 1.5; 
+    border-radius: 12px;
+}
+
+/* Stage Box Visuals */
+.stage-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.stage-box { 
+    background-color: #CCEEFF; 
+    border-radius: 12px;
+    padding: 20px 0px; /* Zero horizontal padding so flex-1 can control width */
+    font-weight: bold; 
+    font-size: 5rem; /* I recommend 3rem to ensure 6 boxes fit on a standard screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage-box.active {
+    background-color: var(--accent-blue);
+}
+
+.status-dot {
+    width: 45px;
+    height: 45px;
+    background: var(--status-green);
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+.nav-sidebar { background-color: #000066 !important; width: 80px; }
+
+.metrics-panel { background-color: #CCEEFF; border-radius: 8px; color: black; }
+
+.camera-panel { background-color: #000066; border-radius: 8px; position: relative; }
+
+
+.camera-image {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain; /* Prevents distortion and scrollbars */
+            }
+
+.fail-badge { background-color: #FF0000; color: white; border-radius: 20px; padding: 5px 25px; font-weight: bold; }
+.pass-badge { background-color: #22C55E; color: white; border-radius: 20px; padding: 5px 25px; font-weight: bold; }
+.camera-container {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        overflow: hidden; /* Prevents scrollbars */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000033; /* Darker blue for letterboxing */
+    }
+
+.nicegui-content { padding: 0 !important; background-color: white; }
+.metric-block { 
+    background-color: #CCEEFF; 
+    border-radius: 12px; 
+    padding: 1.5rem; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.stage-box { 
+    background-color: #CCEEFF; 
+    border-radius: 6px; 
+    padding: 1rem 1.5rem; 
+    font-weight: bold; 
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.stage-box.active { 
+    background-color: #44BBFF !important; 
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(68, 187, 255, 0.5);
+}
+.sim-placeholder { background-color: #D1D5DB; border-radius: 16px;}
+
+/* Metrics Page */
+html, body {
+    overflow: hidden;
+}
+
+.metrics-page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.metrics-shell {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.metrics-header {
+    padding-right: 5.5rem;
+}
+
+.metrics-dashboard-grid {
+    width: 100%;
+    height: calc(100vh - 135px) !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    grid-template-columns: 50% 50% !important;
+    grid-template-rows: 100% !important;
+}
+
+.metrics-column {
+    min-height: 0;
+}
+
+.metrics-card {
+    background: #CCEEFF !important;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 14px !important;
+    height: 100%;
+    min-height: 0;
+}
+
+.metrics-column .metrics-card {
+    flex: 1 1 0;
+    min-height: 0;
+}
+
+.metrics-inner {
+    background: #ffffff;
+    border-radius: 14px;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.metrics-plot {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    background: #ffffff;
+}
+
+.metrics-plot > .nicegui-echart,
+.metrics-plot > .q-card,
+.metrics-plot > div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.metrics-title {
+    font-size: 2rem !important;
+    line-height: 1.1;
+}
+
+.metrics-subtitle {
+    font-size: 0.95rem !important;
+    line-height: 1.2;
+}
+
+.metrics-kpi {
+    font-size: 2.2rem !important;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #0d0d5c;
+}
+
+.metrics-selector .q-field__control,
+.metrics-selector .q-field__native,
+.metrics-selector .q-field__input {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+}

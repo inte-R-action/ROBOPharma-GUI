@@ -1,0 +1,9 @@
+int32 iv_bag_number
+string overall_status
+string contamination_level
+string recommendation
+bool needs_review
+int32 total_particles
+int32 total_bubbles
+custom_interfaces/PositionStatus position1
+custom_interfaces/PositionStatus position2

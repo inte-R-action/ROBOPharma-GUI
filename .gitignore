@@ -1,0 +1,8 @@
+# Ignore generated ROS2 folders
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Ignore Python caches
+__pycache__/
+*.py[cod]

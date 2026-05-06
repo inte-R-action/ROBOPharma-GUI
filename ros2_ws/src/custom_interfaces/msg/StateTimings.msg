@@ -1,0 +1,6 @@
+float32 load_time
+float32 conveyor_time
+float32 spin_time
+float32 detect_time
+float32 unload_time
+float32 process_time

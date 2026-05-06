@@ -1,0 +1,3 @@
+string detection_model
+int32 particle_threshold
+float32 confidence_threshold

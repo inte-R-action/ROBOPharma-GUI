@@ -1,0 +1,9 @@
+bool contaminated
+bool needs_review
+string contamination_level
+int32 total_particles
+int32 total_bubbles
+float32 avg_confidence
+float32 analysis_duration
+string timestamp
+string statement

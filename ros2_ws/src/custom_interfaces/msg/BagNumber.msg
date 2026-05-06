@@ -1,0 +1,2 @@
+int32 current_bag
+int32 total_bags

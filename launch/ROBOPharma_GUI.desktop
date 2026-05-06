@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ROBOPharma GUI
+Comment=Launches the Pi and VM Distributed Architecture
+Exec=/home/roberta/master_launch.sh
+Icon=utilities-terminal
+Terminal=true
+Type=Application
+Categories=Utility;
