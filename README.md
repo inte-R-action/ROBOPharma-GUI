@@ -113,7 +113,7 @@ Run the required launch file from the `launch/` directory to start:
 Example:
 
 ```bash
-ros2 launch bridge launchSystem.launch.py>
+ros2 launch bridge launchSystem.launch.py
 ```
 
 ---
@@ -130,9 +130,13 @@ This allows the system to be launched directly from the desktop.
 
 In the main launch folder there is a script which points to the bridge launch file
 
+
+```bash
 chmod +x /path/to/your/launch/master_launch.sh
 nano ~/Desktop/robopharma_launcher.desktop
+```
 
+```bash
 [Desktop Entry]
 Version=1.0
 Name=ROBOPharma_GUI
@@ -142,6 +146,7 @@ Icon=utilities-terminal
 Terminal=true
 Type=Application
 Categories=Utility;
+```
 
 
 This can then be clicked to launch the whole system.
