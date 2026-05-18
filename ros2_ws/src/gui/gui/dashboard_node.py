@@ -212,6 +212,7 @@ class MyGuiNode(Node):
         and logs pipeline timing for performance analysis. Avoids updating counters
         for duplicate messages from the same bag.
         """
+        self.latest_det = msg
         # Update pass/fail counters only once per bag
         if msg.iv_bag_number != self.last_bag_id:
             if msg.overall_status.lower() == 'contaminated':
